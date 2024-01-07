@@ -8,7 +8,7 @@ class Model:
 
     def create_table(self):
         cursor = self.conn.cursor()
-        cursor.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)''')
+        cursor.execute('''CREATE TABLE IF NOT EXISTS items (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, firstname)''')
         self.conn.commit()
 
     def fetch_all_items(self):
@@ -16,9 +16,9 @@ class Model:
         cursor.execute('''SELECT * FROM items''')
         return cursor.fetchall()
 
-    def add_item(self, name):
+    def add_item(self, name, firstname):
         cursor = self.conn.cursor()
-        cursor.execute('''INSERT INTO items (name) VALUES (?)''', (name,))
+        cursor.execute('''INSERT INTO items (name, firstname) VALUES (?,?)''', (name,firstname,))
         self.conn.commit()
 
     def update_item(self, item_id, new_name):
