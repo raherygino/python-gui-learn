@@ -9,8 +9,8 @@ class Presenter:
         items = self.model.fetch_all_items()
         self.view.populate_table(items)
 
-    def add_item(self, name):
-        self.model.add_item(name)
+    def add_item(self, name, firstname):
+        self.model.add_item(name, firstname)
         self.populate_table()
 
     def update_item(self, item_id, new_name):
