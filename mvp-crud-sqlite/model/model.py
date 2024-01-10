@@ -1,9 +1,15 @@
-from PyQt5.QtCore import Qt
+import os
 import sqlite3
+from PyQt5.QtCore import Qt
+from pathlib import Path
 
 class Model:
     def __init__(self):
-        self.conn = sqlite3.connect("database.db")
+        default_path = f"{os.path.expanduser('~')}\Documents"
+        directory = f"{default_path}\db-crud"
+        path = Path(directory)
+        path.mkdir(parents=True, exist_ok=True)
+        self.conn = sqlite3.connect(directory+"\database.db")
         self.create_table()
 
     def create_table(self):
