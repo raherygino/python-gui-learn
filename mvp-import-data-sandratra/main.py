@@ -5,9 +5,9 @@ from app import *
 if __name__ == '__main__':
     app = QApplication(sys.argv)
 
-    model = ImportModel()
-    view = ImportView()
-    presenter = ImportPresenter(view, model)
+    model = StudentModel()
+    view = StudentView()
+    presenter = StudentPresenter(view, model)
     view.show()
-
+    
     sys.exit(app.exec_())

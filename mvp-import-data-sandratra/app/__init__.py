@@ -1,4 +1,4 @@
 from .common.importThread import ImportThread
-from .model.importModel import ImportModel
-from .presenter.importPresenter import ImportPresenter
-from .view.importView import ImportView
+from .model.studentModel import StudentModel
+from .presenter.studentPresenter import StudentPresenter
+from .view.studentView import StudentView
